@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/posts',[PostController::class, 'index']);
+//これは/postsというURIにgetメソッドで注文が来たらPostControllerのindexというメソッドを実行する仕組みになっている。
+//コントローラーでモデルのuse宣言を書いたように、web.phpでもuse宣言を書く必要がある。
