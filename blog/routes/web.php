@@ -14,6 +14,6 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/posts',[PostController::class, 'index']);
-//これは/postsというURIにgetメソッドで注文が来たらPostControllerのindexというメソッドを実行する仕組みになっている。
-//コントローラーでモデルのuse宣言を書いたように、web.phpでもuse宣言を書く必要がある。
+Route::get('/', function() {
+    return view('posts/index');//viewヘルパはcontrollerやweb.phpからviewフォルダー内のファイルを表示したいときに使います。
+});
